@@ -1,0 +1,50 @@
+ru:
+  activerecord:
+    models:
+      frequently_asked_question:
+        one: 'вопрос-ответ'
+        few: 'вопросы-ответы'
+        many: 'вопросы-ответы'
+        other: 'вопросы-ответы'
+      page: 
+        one: 'страница'
+        few: 'страницы'
+        many: 'страницы'
+        other: 'страницы'
+      price: 
+        one: 'прайс'
+        few: 'прайсы'
+        many: 'прайсы'
+        other: 'прайсы'
+      role: 
+        one: 'роль'
+        few: 'роли'
+        many: 'роли'
+        other: 'роли'
+      user: 
+        one: 'пользователь'
+        few: 'пользователи'
+        many: 'пользователи'
+        other: 'пользователи'
+    attributes:
+      frequently_asked_question:
+        title: 'заголовок'
+        question: 'вопрос'
+        answer: 'ответ'
+      price:
+        name: 'название'
+        file: 'файл'
+      page:
+        title: 'заголовок'
+        body: 'контент'
+        key: 'ключ(системный)'
+      user:
+        email: 'e-mail'
+        password: 'пароль'
+        last_sign_in_at: 'крайняя авторизация'
+        sign_in_count: 'количество авторизаций'
+        current_password: 'текущий пароль'
+        password_confirmation: 'подтверждение пароля'
+        created_at: 'создано'
+        updated_at: 'обновлено'
+        roles: 'роли'
