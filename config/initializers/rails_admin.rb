@@ -43,14 +43,20 @@ RailsAdmin.config do |config|
 
   config.model 'Page' do
     configure :title, :string 
+    configure :key, :string 
+    configure :public, :boolean
     configure :body, :ck_editor
     list do
       field :title
+      field :key
+      field :public
     end
     show do; end
     edit do
       field :title
       field :body
+      field :key
+      field :public
     end
     export do; end
   end

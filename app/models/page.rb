@@ -4,5 +4,7 @@ class Page < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :title, use: [:history, :finders]
+  
+  scope :published, -> { where(public: true) }
 
 end

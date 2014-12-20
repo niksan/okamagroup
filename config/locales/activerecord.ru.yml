@@ -38,6 +38,7 @@ ru:
         title: 'заголовок'
         body: 'контент'
         key: 'ключ(системный)'
+        public: 'опубликовано'
       user:
         email: 'e-mail'
         password: 'пароль'
