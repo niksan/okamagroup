@@ -1,14 +1,301 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Okamagroup</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+<!--[if lt IE 9]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if !IE] -->
+<html lang="en">
+  <!-- <![endif] -->
+  <head>
+    <title>Okamagroup</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <![endif]-->
+    <link href="<%= asset_path('meta_icons/favicon.ico')%>" rel="shortcut icon" type="image/x-icon">
+    <link href="<%= asset_path('meta_icons/apple-touch-icon.png')%>" rel="apple-touch-icon-precomposed">
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body class="">
+    <div id="wrapper">
+      <header id="header">
+        <div class="container">
+          <nav class="navbar navbar-collapsed-sm navbar-default" id="nav" role="navigation">
+            <div class="navbar-header">
+              <button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">
+                <img alt="Jednotka" width="355" height="75" src="<%= asset_path('logo.jpg') %>" />
+              </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-header-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-delay="50" data-hover="dropdown" data-toggle="dropdown" href="#">
+                    <span>
+                      Home
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class=" dropdown-submenu">
+                      <a href="index.html">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="index2.html">Home 2</a>
+                    </li>
+                    <li class="">
+                      <a href="index3.html">Home 3</a>
+                    </li>
+                    <li class="">
+                      <a href="boxed.html">Boxed layout</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="active dropdown">
+                  <a class="dropdown-toggle" data-delay="50" data-hover="dropdown" data-toggle="dropdown" href="#">
+                    <span>
+                      Pages
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="active">
+                      <a href="about_us.html">About us</a>
+                    </li>
+                    <li class="">
+                      <a href="services.html">Services</a>
+                    </li>
+                    <li class="">
+                      <a href="faq.html">FAQ</a>
+                    </li>
+                    <li>
+                      <a href="404.html">404 Error</a>
+                    </li>
+                    <li>
+                      <a href="500.html">500 Error</a>
+                    </li>
+                    <li>
+                      <a href="coming_soon.html">Coming soon</a>
+                    </li>
+                    <li>
+                      <a href="under_construction.html">Under construction</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-delay="50" data-hover="dropdown" data-toggle="dropdown" href="#">
+                    <span>
+                      Features
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="">
+                      <a href="animations.html">Animations</a>
+                    </li>
+                    <li class="">
+                      <a href="elements.html">Elements</a>
+                    </li>
+                    <li class="">
+                      <a href="icons.html">Icons</a>
+                    </li>
+                    <li class="">
+                      <a href="forms.html">Forms</a>
+                    </li>
+                    <li class="">
+                      <a href="tables.html">Tables</a>
+                    </li>
+                    <li class="">
+                      <a href="typography.html">Typography</a>
+                    </li>
+                    <li class="">
+                      <a href="pricing_tables.html">Pricing tables</a>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a href="index.html">
+                        Submenu
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="index.html">Submenu item</a>
+                        </li>
+                        <li>
+                          <a href="index.html">Submenu item</a>
+                        </li>
+                        <li>
+                          <a href="index.html">Submenu item</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-delay="50" data-hover="dropdown" data-toggle="dropdown" href="#">
+                    <span>
+                      Blog
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="">
+                      <a href="blog_small.html">Small image</a>
+                    </li>
+                    <li class="">
+                      <a href="blog_large.html">Large image</a>
+                    </li>
+                    <li class="">
+                      <a href="blog_single_post.html">Single post</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-delay="50" data-hover="dropdown" data-toggle="dropdown" href="#">
+                    <span>
+                      Portfolio
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="">
+                      <a href="portfolio.html">2 columns</a>
+                    </li>
+                    <li class="">
+                      <a href="portfolio_three_cols.html">3 columns</a>
+                    </li>
+                    <li class="">
+                      <a href="portfolio_four_cols.html">4 columns</a>
+                    </li>
+                    <li class="">
+                      <a href="portfolio_detail.html">Project detail</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-delay="50" data-hover="dropdown" data-toggle="dropdown" href="#">
+                    <span>
+                      Contact
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="">
+                      <a href="contact.html">Contact</a>
+                    </li>
+                    <li class="">
+                      <a href="contact2.html">Contact 2</a>
+                    </li>
+                    <li class="">
+                      <a href="contact3.html">Contact 3</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div id="main" role="main">
+        <div id="main-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="page-header page-header-with-icon no-mg-t">
+                  <i class="fa fa-tag"></i>
+                  <h2>
+                    Who we are
+                  </h2>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <p class="lead lead-xs text-center">Suspendisse dignissim in sem eget pulvinar. Mauris aliquam nulla at libero pretium, eu tincidunt nulla molestie. Cras pulvinar posuere massa sed scelerisque.  Nam porta ac turpis id dapibus. Morbi facilisis eu nibh pulvinar convallis. Proin rutrum nisi ante, eu fringilla metus aliquam non. Vestibulum posuere, mauris sit amet.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fade" id="scroll-to-top">
+          <i class="fa fa-chevron-up"></i>
+        </div>
+      </div>
+      <footer id="footer">
+        <div id="footer-main">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-6 info-box">
+                <div class="logo-container">
+                  <img alt="Jednotka" width="117" height="39" src="<%= asset_path('logo.svg') %>" />
+                </div>
+                <p class="no-mg-b">Главное направление: развитие технологий производства инновационной продукции в секторе строительного арматурного проката и изделий строительного назначения.(текст на замену)</p>
+              </div>
+              <div class="col-md-6 col-sm-6 info-box">
+              </div>
+              <div class="col-md-3 col-sm-6 info-box">
+                <h2 class="title">Contact</h2>
+                <div class="icon-boxes">
+                  <div class="icon-box">
+                    <div class="icon icon-wrap">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+                    <div class="content">
+                      4567 Street name,
+                      <br>
+                      012 12 City name, Country
+                    </div>
+                  </div>
+                  <div class="icon-box">
+                    <div class="icon icon-wrap">
+                      <i class="fa fa-phone"></i>
+                    </div>
+                    <div class="content">
+                      <a href="tel:+012345678">+012 345 678</a>
+                    </div>
+                  </div>
+                  <div class="icon-box">
+                    <div class="icon icon-wrap">
+                      <i class="fa fa-envelope"></i>
+                    </div>
+                    <div class="content"><a href="mailto:info@bublinastudio.com">info@bublinastudio.com</a></div>
+                  </div>
+                  <div class="icon-box">
+                    <div class="icon icon-wrap">
+                      <i class="fa fa-globe"></i>
+                    </div>
+                    <div class="content"><a href="#">www.bublinastudio.com</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 clearfix">
+                <p class="copyright">
+                  Copyright
+                  &copy;
+                  2015 Okamagroup
+                </p>
+                <div class="links">
+                  <a class="btn btn-circle btn-medium-light btn-sm" href="#">
+                    <i class="fa fa-twitter text-dark"></i>
+                  </a>
+                  <a class="btn btn-circle btn-medium-light btn-sm" href="#">
+                    <i class="fa fa-dribbble text-dark"></i>
+                  </a>
+                  <a class="btn btn-circle btn-medium-light btn-sm" href="#">
+                    <i class="fa fa-facebook text-dark"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
