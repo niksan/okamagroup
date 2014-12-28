@@ -9,8 +9,8 @@ set :unicorn_pid,          "#{fetch(:deploy_to)}/shared/pids/unicorn.pid"
 set :format,               :pretty
 set :log_level,            :info
 set :pty,                  true
-set :linked_files,         %w{config/database.yml config/newrelic.yml}
-set :linked_dirs,          %w{bin log vendor/bundle public/system public/uploads public/ckeditor_assets}
+set :linked_files,         %w{config/database.yml}
+set :linked_dirs,          %w{bin log vendor/bundle public/uploads public/ckeditor_assets}
 set :keep_releases,        5
 
 namespace :deploy do
