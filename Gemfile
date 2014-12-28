@@ -25,6 +25,9 @@ gem 'haml-rails'
 group :development do
   gem 'spring'
   gem 'letter_opener'
+  gem 'capistrano'
+  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano-rvm', '~> 0.1.0'
 end
 
 gem 'execjs'

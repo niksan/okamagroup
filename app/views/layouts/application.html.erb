@@ -57,21 +57,21 @@
                 <div class="logo-container">
                   <img alt="Jednotka" width="117" height="39" src="<%= asset_path('logo.svg') %>" />
                 </div>
-                <p class="no-mg-b">Главное направление: развитие технологий производства инновационной продукции в секторе строительного арматурного проката и изделий строительного назначения.(текст на замену)</p>
+                <p class="no-mg-b">
+                  <%= @settings[:annotation] %>
+                </p>
               </div>
               <div class="col-md-6 col-sm-6 info-box">
               </div>
               <div class="col-md-3 col-sm-6 info-box">
-                <h2 class="title">Contact</h2>
+                <h2 class="title">Контакты</h2>
                 <div class="icon-boxes">
                   <div class="icon-box">
                     <div class="icon icon-wrap">
                       <i class="fa fa-map-marker"></i>
                     </div>
                     <div class="content">
-                      4567 Street name,
-                      <br>
-                      012 12 City name, Country
+                      <%==@settings[:location] %>
                     </div>
                   </div>
                   <div class="icon-box">
@@ -79,20 +79,20 @@
                       <i class="fa fa-phone"></i>
                     </div>
                     <div class="content">
-                      <a href="tel:+012345678">+012 345 678</a>
+                      <a href="tel:<%= @settings[:phone] %>"><%== @settings[:phone] %></a>
                     </div>
                   </div>
                   <div class="icon-box">
                     <div class="icon icon-wrap">
                       <i class="fa fa-envelope"></i>
                     </div>
-                    <div class="content"><%= link_to 'info@okamagroup.com', 'mailto:info@okamagroup.com'%></div>
+                    <div class="content"><%= link_to @settings[:email], "mailto:#{ @settings[:email] }" %></div>
                   </div>
                   <div class="icon-box">
                     <div class="icon icon-wrap">
                       <i class="fa fa-globe"></i>
                     </div>
-                    <div class="content"><%=link_to 'www.okamagroup.com', 'http://okamagroup.com'%></div>
+                    <div class="content"><%= link_to "www.#{ @settings[:website] }", "http://#{ @settings[:website] }"%></div>
                   </div>
                 </div>
               </div>
@@ -109,13 +109,10 @@
                   2015 Okamagroup
                 </p>
                 <div class="links">
-                  <a class="btn btn-circle btn-medium-light btn-sm" href="#">
+                  <a class="btn btn-circle btn-medium-light btn-sm" href="<%= @settings[:twitter] %>">
                     <i class="fa fa-twitter text-dark"></i>
                   </a>
-                  <a class="btn btn-circle btn-medium-light btn-sm" href="#">
-                    <i class="fa fa-dribbble text-dark"></i>
-                  </a>
-                  <a class="btn btn-circle btn-medium-light btn-sm" href="#">
+                  <a class="btn btn-circle btn-medium-light btn-sm" href="<%= @settings[:twitter] %>">
                     <i class="fa fa-facebook text-dark"></i>
                   </a>
                 </div>

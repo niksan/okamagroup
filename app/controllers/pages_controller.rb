@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
-  before_action :find_page
+  load_and_authorize_resource class: 'Page'
+  before_action :find_page, only: :index
 
   def show; end
 

@@ -1,8 +1,7 @@
 module ApplicationHelper
 
   def main_menu_item(menu_item, link='#')
-    return unless menu_item
-    parameters = if menu_item[:key] == controller_name
+    parameters = if link == request.path
       { class: 'active' }
     else
       {}

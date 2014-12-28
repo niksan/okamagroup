@@ -1,6 +1,6 @@
 %ul.nav.navbar-nav.navbar-right
   = main_menu_item @main_menu_items[:main], root_path
-  = main_menu_item @main_menu_items[:services]
-  = main_menu_item @main_menu_items[:products]
-  = main_menu_item @main_menu_items[:faq]
-  = main_menu_item @main_menu_items[:contacts]
+  = main_menu_item @main_menu_items[:services], page_path(Page.find(@main_menu_items[:services][:id]))
+  = main_menu_item @main_menu_items[:prices], prices_path
+  = main_menu_item @main_menu_items[:faq], faq_index_path
+  = main_menu_item @main_menu_items[:contacts], contacts_path
