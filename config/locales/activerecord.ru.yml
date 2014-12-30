@@ -16,6 +16,11 @@ ru:
         few: 'прайсы'
         many: 'прайсы'
         other: 'прайсы'
+      setting: 
+        one: 'настройка'
+        few: 'настройки'
+        many: 'настройки'
+        other: 'настройки'
       role: 
         one: 'роль'
         few: 'роли'
@@ -34,6 +39,10 @@ ru:
       price:
         name: 'название'
         file: 'файл'
+      setting:
+        name: 'название'
+        body: 'ключ'
+        body: 'значение'
       page:
         title: 'заголовок'
         body: 'контент'

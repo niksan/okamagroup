@@ -87,6 +87,24 @@ RailsAdmin.config do |config|
     export do; end
   end
 
+  config.model 'Setting' do
+    configure :name, :string 
+    configure :key, :string
+    configure :body, :text
+    list do
+      field :name
+    end
+    show do; end
+    edit do
+      field :name
+      field :key do
+        read_only true
+      end
+      field :body
+    end
+    export do; end
+  end
+
   config.model 'User' do
     configure :roles do
       inverse_of :users

@@ -1,4 +1,4 @@
-@import "jednotka/bootstrap/bootstrap.min";
+@import "jednotka/bootstrap/bootstrap";
 
 @import "jednotka/jednotka_green";
 //customize contrast color
@@ -7,4 +7,10 @@
 
 #header {
   background: #000;
+}
+#map-canvas {
+  height: 326px;
+}
+#contact_message {
+  height: 215px;
 }
