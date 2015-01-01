@@ -60,7 +60,7 @@
                 <div class="icon-boxes">
                   <div class="icon-box">
                     <div class="icon icon-wrap">
-                      <i class="fa fa-map-marker"></i>
+                      <i class="fa fa-icon-map-marker"></i>
                     </div>
                     <div class="content">
                       <%==@settings[:location] %>
@@ -68,7 +68,7 @@
                   </div>
                   <div class="icon-box">
                     <div class="icon icon-wrap">
-                      <i class="fa fa-phone"></i>
+                      <i class="fa fa-icon-phone"></i>
                     </div>
                     <div class="content">
                       <a href="tel:<%= @settings[:phone] %>"><%== @settings[:phone] %></a>
@@ -76,13 +76,13 @@
                   </div>
                   <div class="icon-box">
                     <div class="icon icon-wrap">
-                      <i class="fa fa-envelope"></i>
+                      <i class="fa fa-icon-envelope"></i>
                     </div>
                     <div class="content"><%= link_to @settings[:email], "mailto:#{ @settings[:email] }" %></div>
                   </div>
                   <div class="icon-box">
                     <div class="icon icon-wrap">
-                      <i class="fa fa-globe"></i>
+                      <i class="fa fa-icon-globe"></i>
                     </div>
                     <div class="content"><%= link_to "www.#{ @settings[:website] }", "http://#{ @settings[:website] }"%></div>
                   </div>
@@ -102,10 +102,10 @@
                 </p>
                 <div class="links">
                   <a class="btn btn-circle btn-medium-light btn-sm" href="<%= @settings[:twitter] %>">
-                    <i class="fa fa-twitter text-dark"></i>
+                    <i class="fa fa-icon-twitter text-dark"></i>
                   </a>
                   <a class="btn btn-circle btn-medium-light btn-sm" href="<%= @settings[:twitter] %>">
-                    <i class="fa fa-facebook text-dark"></i>
+                    <i class="fa fa-icon-facebook text-dark"></i>
                   </a>
                 </div>
               </div>
