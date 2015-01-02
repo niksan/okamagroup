@@ -33,15 +33,11 @@ ActiveRecord::Schema.define(version: 20141228160340) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "frequently_asked_questions", force: true do |t|
-    t.string   "title"
-    t.string   "slug"
     t.text     "question"
     t.text     "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "frequently_asked_questions", ["slug"], name: "index_frequently_asked_questions_on_slug", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -72,6 +68,7 @@ ActiveRecord::Schema.define(version: 20141228160340) do
 
   create_table "prices", force: true do |t|
     t.string   "name"
+    t.text     "description"
     t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -26,15 +26,13 @@ RailsAdmin.config do |config|
   end
 
   config.model 'FrequentlyAskedQuestion' do
-    configure :title, :string 
     configure :question, :ck_editor
     configure :answer, :ck_editor
     list do
-      field :title
+      field :question
     end
     show do; end
     edit do
-      field :title
       field :question
       field :answer
     end
@@ -63,6 +61,7 @@ RailsAdmin.config do |config|
 
   config.model 'Price' do
     configure :name, :string 
+    configure :description, :ck_editor
     configure :file, :carrierwave
     list do
       field :name
@@ -71,6 +70,7 @@ RailsAdmin.config do |config|
     show do; end
     edit do
       field :name
+      field :description
       field :file
     end
     export do; end

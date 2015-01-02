@@ -2,6 +2,8 @@ class PricesController < PagesController
 
   PAGE_KEY='prices'
 
-  def index; end
+  def index
+    @prices = Price.all
+  end
 
 end

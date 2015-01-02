@@ -10,3 +10,16 @@
           .row
             .col-sm-12
               != @page.body
+              - unless @page.body.empty?
+                %hr
+    .container
+      .row
+        .col-sm-12
+          .row
+            - @prices.each do |price|
+              .jumbotron
+                %h4.no-mg-t
+                  = price.name
+                  %p
+                    != price.description
+                  = link_to 'Скачать', price.file.url, class: 'btn btn-contrast no-mg-b'
