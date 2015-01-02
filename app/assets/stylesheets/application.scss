@@ -1,9 +1,8 @@
-@import "jednotka/bootstrap/bootstrap";
+/*
+ *= require bootstrap_and_overrides
+ *= require jednotka/jednotka_green
+*/
 
-@import "jednotka/jednotka_green";
-//customize contrast color
-//$contrast: #01a9e0;
-//@import "jednotka/jednotka";
 
 #header {
   background: #000;
