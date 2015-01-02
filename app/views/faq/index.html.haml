@@ -1,0 +1,17 @@
+#main-content
+  .container
+    .row
+      .col-sm-12
+        .page-header.page-header-with-icon.no-mg-t
+          %i.fa-icon-comments-alt
+          %h2
+            = @page.title
+    .row
+      .col-sm-12
+        .lead.lead-md.text-center.no-mg-b
+          != @page.body
+    .row
+      .col-sm-12
+        #accordion.panel-group.accordion.accordion-bordered
+          - @frequently_asked_questions.each do |faq|
+            = render partial: 'frequently_asked_question', locals: { faq: faq }

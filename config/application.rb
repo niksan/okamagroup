@@ -10,7 +10,5 @@ module Okamagroup
   class Application < Rails::Application
     config.time_zone = 'Moscow'
     config.i18n.default_locale = :ru
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts', 'jednotka', 'font-awesome')
-    config.assets.precompile += %w( .svg .eot .woff .ttf )
   end
 end

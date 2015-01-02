@@ -1,0 +1,4 @@
+ru:
+  cancan:
+    exception:
+      omniauth_password: 'Недостаточно прав для доступа к данной странице'

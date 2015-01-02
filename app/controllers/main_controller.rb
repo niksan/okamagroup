@@ -2,8 +2,6 @@ class MainController < PagesController
   
   PAGE_KEY = 'main'
   
-  def index
-    render '/pages/show'
-  end
+  def index; end
 
 end
