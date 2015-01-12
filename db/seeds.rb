@@ -6,6 +6,8 @@ u.save
 Page.create(title: 'Главная', key: 'main', public: true)
 Page.create(title: 'Услуги', key: 'services', public: true)
 Page.create(title: 'Продукция', key: 'prices', public: true)
+Page.create(title: 'Производство', key: 'manufacture', public: true)
+Page.create(title: 'ГОСТЫ и ТУ', key: 'gost', public: true)
 Page.create(title: 'FAQ', key: 'faq', public: true)
 Page.create(title: 'Контакты', key: 'contacts', body: 'контактная информация самой крутой воронежской организации', public: true)
 
