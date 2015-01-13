@@ -18,5 +18,5 @@
           .row
             - @prices.each do |price|
               = link_to price.file.url, class: 'btn btn-bordered btn-default downloaded_price' do
-                = price.name
+                = price.filename
                 %i.fa-icon-download-alt
