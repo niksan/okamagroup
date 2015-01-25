@@ -39,6 +39,31 @@ RailsAdmin.config do |config|
     export do; end
   end
 
+  config.model 'GostGroup' do
+    visible false
+    configure :name, :string 
+    list do; end
+    show do; end
+    edit do
+      field :name
+    end
+    export do; end
+  end
+
+  config.model 'Gost' do
+    configure :gost_group, :belongs_to_association
+    configure :file, :carrierwave
+    list do
+      field :filename
+    end
+    show do; end
+    edit do
+      field :gost_group
+      field :file
+    end
+    export do; end
+  end
+
   config.model 'Page' do
     configure :title, :string 
     configure :key, :string 
@@ -60,16 +85,13 @@ RailsAdmin.config do |config|
   end
 
   config.model 'Price' do
-    configure :name, :string 
     configure :description, :ck_editor
     configure :file, :carrierwave
     list do
-      field :name
-      field :file
+      field :filename
     end
     show do; end
     edit do
-      field :name
       field :description
       field :file
     end
@@ -101,6 +123,24 @@ RailsAdmin.config do |config|
         read_only true
       end
       field :body
+    end
+    export do; end
+  end
+
+  config.model 'Staff' do
+    configure :name, :string 
+    configure :email, :string
+    configure :phone, :string
+    list do
+      field :name
+      field :email
+      field :phone
+    end
+    show do; end
+    edit do
+      field :name
+      field :email
+      field :phone
     end
     export do; end
   end

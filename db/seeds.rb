@@ -10,6 +10,7 @@ Page.create(title: 'Производство', key: 'manufacture', public: true)
 Page.create(title: 'ГОСТЫ и ТУ', key: 'gost', public: true)
 Page.create(title: 'FAQ', key: 'faq', public: true)
 Page.create(title: 'Контакты', key: 'contacts', body: 'контактная информация самой крутой воронежской организации', public: true)
+Page.create(title: 'Спецпредложения', key: 'specials', body: '', public: true)
 
 Setting.create(name: 'Аннотация', key: 'annotation', body: 'Главное направление: развитие технологий производства инновационной продукции в секторе строительного арматурного проката и изделий строительного назначения.(текст на замену)')
 Setting.create(name: 'Адрес', key: 'location', body: ' ')

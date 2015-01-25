@@ -1,6 +1,7 @@
-class Price < ActiveRecord::Base
+class Gost < ActiveRecord::Base
 
   validates :file, presence: true
+  belongs_to :gost_group
   mount_uploader :file, DocumentUploader
 
   def filename

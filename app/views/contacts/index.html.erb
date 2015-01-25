@@ -15,53 +15,37 @@
             Контактная информация
           </h2>
         </div>
-        <div class='row text-center'>
-          <div class='col-sm-3'>
-            <div class='icon-wrap icon-circle contrast-bg icon-md'>
-              <i class='fa-icon-map-marker text-white'></i>
+        <% @staff.each do |employee| %>
+          <div class='row text-center' style='margin: 0px 0px 20px 0px;'>
+            <div class='col-sm-4'>
+              <div class='icon-wrap icon-circle contrast-bg icon-md'>
+                <i class='fa-icon-user text-white'></i>
+              </div>
+              <h3>ФИО</h3>
+              <ul class='list-unstyled'>
+                <li><%= employee.name %></li>
+              </ul>
             </div>
-            <h3>Адрес</h3>
-            <ul class='list-unstyled'>
-              <li><%== @settings[:address] %></li>
-            </ul>
-          </div>
-          <div class='col-sm-3'>
-            <div class='icon-wrap icon-circle contrast-bg icon-md'>
-              <i class='fa-icon-phone text-white'></i>
+            <div class='col-sm-4'>
+              <div class='icon-wrap icon-circle contrast-bg icon-md'>
+                <i class='fa-icon-phone text-white'></i>
+              </div>
+              <h3>Телефон</h3>
+              <ul class='list-unstyled'>
+                <li><a href="tel:<%== employee.phone %>"><%== employee.phone %></a></li>
+              </ul>
             </div>
-            <h3>Телефон</h3>
-            <ul class='list-unstyled'>
-              <li><a href="tel:<%== @settings[:phone] %>"><%== @settings[:phone] %></a></li>
-            </ul>
-          </div>
-          <div class='col-sm-3'>
-            <div class='icon-wrap icon-circle contrast-bg icon-md'>
-              <i class='fa-icon-envelope-alt text-white'></i>
+            <div class='col-sm-4'>
+              <div class='icon-wrap icon-circle contrast-bg icon-md'>
+                <i class='fa-icon-envelope-alt text-white'></i>
+              </div>
+              <h3>E-Mail</h3>
+              <ul class='list-unstyled'>
+                <li><a href="mailto:<%== employee.email %>"><%= employee.email %></a></li>
+              </ul>
             </div>
-            <h3>E-Mail</h3>
-            <ul class='list-unstyled'>
-              <li><a href="mailto:<%== @settings[:email] %>"><%= @settings[:email] %></a></li>
-            </ul>
           </div>
-          <div class='col-sm-3'>
-            <div class='icon-wrap icon-circle contrast-bg icon-md'>
-              <i class='fa-icon-time text-white'></i>
-            </div>
-            <h3>Время работы</h3>
-            <ul class='list-unstyled'>
-              <li>
-                Пн.-Пт.
-                &mdash;
-                <strong>08:00 - 16:00</strong>
-              </li>
-              <li>
-                Сб.-Вс.
-                &mdash;
-                <strong>выходной</strong>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
     <div class='row'>

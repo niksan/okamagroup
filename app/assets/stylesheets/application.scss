@@ -5,7 +5,7 @@
 
 
 #header {
-  background: #000;
+  background: image-url('top_bg.jpg') #000;
 }
 #map-canvas {
   height: 326px;
@@ -15,4 +15,19 @@
 }
 .downloaded_price {
   margin-right: 10px;
+  margin-bottom: 10px;
+}
+.downloaded_gost {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.downloaded_gost i {
+  padding-left: 5px;
+}
+ul.nav.navbar-nav.navbar-right li a span i {
+  padding-right: 5px;
+}
+#header .navbar-default .navbar-nav>li>a {
+  padding: 0 12px;
 }

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
 
+  resources :gosts, only: :index
   resources :pages, only: :show
   with_options only: :index do
     resources :prices
