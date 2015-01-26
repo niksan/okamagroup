@@ -63,10 +63,10 @@ end
 
 namespace :deploy do
   task :symlink_shared do
-    %w{database newrelic oauth soundcloud youtube}.each do |file|
+    %w{database}.each do |file|
       run "ln -nfs #{shared_path}/config/#{file}.yml #{release_path}/config/#{file}.yml"
     end
-    %w{assets ckeditor_assets system uploads}.each do |file|
+    %w{assets ckeditor_assets uploads}.each do |file|
       run "ln -nfs #{shared_path}/public/#{file} #{release_path}/public/#{file}"
     end
   end
