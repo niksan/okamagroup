@@ -23,13 +23,13 @@ gem 'paper_trail', '~> 3.0.6'
 gem 'haml-rails'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'whenever'
 
 group :development do
   gem 'spring'
   gem 'letter_opener'
-  gem 'capistrano'
-  gem 'capistrano-rails', '~> 1.1.0'
-  gem 'capistrano-rvm', '~> 0.1.0'
+  gem "capistrano", '~> 2.15.5'
+  gem "rvm-capistrano", '~> 1.5.3'
 end
 
 gem 'execjs'
