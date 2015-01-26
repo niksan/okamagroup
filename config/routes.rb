@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :gosts, only: :index
+  resources :specials, only: :index
   resources :pages, only: :show
   with_options only: :index do
     resources :prices
