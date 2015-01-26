@@ -1,1 +1,1 @@
-NonStupidDigestAssets.whitelist = [/ckeditor\/.*/, /ck_editor\/.*/, /ck-editor\/.*/]
+NonStupidDigestAssets.whitelist = [/ckeditor\/.*/, /ck_editor\/.*/, /ck-editor\/.*/, /resque\/.*/]
