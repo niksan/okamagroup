@@ -16,7 +16,6 @@ gem 'devise'
 gem 'cancancan', '~> 1.9'
 gem 'rails_admin'
 gem 'ckeditor'
-gem 'non-stupid-digest-assets' #for ckeditor assets in production
 gem 'paper_trail', '~> 3.0.6'
 gem 'haml-rails'
 gem 'less-rails'
