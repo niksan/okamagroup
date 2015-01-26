@@ -5,7 +5,7 @@ class Gost < ActiveRecord::Base
   mount_uploader :file, DocumentUploader
 
   def filename
-    file.path.split('/').last.split('.')[0..-1].join
+    file.path.split('/').last.split('.')[0...-1].join
   end
 
 end
