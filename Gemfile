@@ -20,6 +20,7 @@ gem 'paper_trail', '~> 3.0.6'
 gem 'haml-rails'
 gem 'less-rails'
 gem 'whenever'
+gem 'twitter-bootstrap-rails'
 
 group :development do
   gem 'spring'
