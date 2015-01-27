@@ -15,3 +15,4 @@
         #accordion.panel-group.accordion.accordion-bordered
           - @frequently_asked_questions.each do |faq|
             = render partial: 'frequently_asked_question', locals: { faq: faq }
+  = render partial: '/prices/list', locals: { prices: @page.prices }

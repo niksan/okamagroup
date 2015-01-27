@@ -16,3 +16,4 @@
               = link_to gost.file.url, class: 'btn btn-bordered btn-default downloaded_gost' do
                 = gost.filename
                 %i.fa-icon-download-alt
+  = render partial: '/prices/list', locals: { prices: @page.prices }

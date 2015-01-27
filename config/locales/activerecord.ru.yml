@@ -53,11 +53,14 @@ ru:
         answer: 'ответ'
       gost:
         file: 'файл'
+        filename: 'имя файла'
+        gost_group: 'группа ГОСТов'
       gost_group:
         name: 'название'
       price:
         name: 'название'
         file: 'файл'
+        page: 'страница'
       setting:
         name: 'название'
         body: 'ключ'
@@ -67,6 +70,8 @@ ru:
         body: 'контент'
         key: 'ключ(системный)'
         public: 'опубликовано'
+      role:
+        name: 'название'
       user:
         email: 'e-mail'
         password: 'пароль'

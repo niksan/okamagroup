@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   private
 
     def find_page
-      @page = Page.find_by(key: self.class::PAGE_KEY)
+      @page = Page.includes(:prices).find_by(key: self.class::PAGE_KEY)
     end
 
 end

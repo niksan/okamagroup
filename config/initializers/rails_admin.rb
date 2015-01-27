@@ -40,9 +40,10 @@ RailsAdmin.config do |config|
   end
 
   config.model 'GostGroup' do
-    visible false
     configure :name, :string 
-    list do; end
+    list do
+      field :name
+    end
     show do; end
     edit do
       field :name
@@ -55,6 +56,7 @@ RailsAdmin.config do |config|
     configure :file, :carrierwave
     list do
       field :filename
+      field :gost_group
     end
     show do; end
     edit do
@@ -85,14 +87,15 @@ RailsAdmin.config do |config|
   end
 
   config.model 'Price' do
-    configure :description, :ck_editor
+    configure :page, :belongs_to_association
     configure :file, :carrierwave
     list do
       field :filename
+      field :page
     end
     show do; end
     edit do
-      field :description
+      field :page
       field :file
     end
     export do; end

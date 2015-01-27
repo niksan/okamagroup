@@ -3,6 +3,9 @@
     .row
       .col-sm-12
         .page-header.page-header-with-icon.no-mg-t
+          %i.fa-icon-cogs
+          %h2 О компании
         .row
           .col-sm-12
             != @page.body
+  = render partial: '/prices/list', locals: { prices: @page.prices }

@@ -17,8 +17,6 @@ Setting.create(name: 'Адрес', key: 'location', body: ' ')
 Setting.create(name: 'Телефон', key: 'phone', body: ' ')
 Setting.create(name: 'Email', key: 'email', body: 'info@okamagroup.com')
 Setting.create(name: 'Сайт', key: 'website', body: 'okamagroup.com')
-Setting.create(name: 'страница Twitter', key: 'twitter', body: '#')
-Setting.create(name: 'страница Facebook', key: 'facebook', body: '#')
 Setting.create(name: 'Координаты(широта, долгота)', key: 'lat_lng', body: '51.671273, 39.217176')
 
 FrequentlyAskedQuestion.create(question: 'Текст тестовго вопроса', answer: 'Здесь - текст тестового ответа')

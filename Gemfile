@@ -19,7 +19,6 @@ gem 'ckeditor'
 gem 'paper_trail', '~> 3.0.6'
 gem 'haml-rails'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
 gem 'whenever'
 
 group :development do

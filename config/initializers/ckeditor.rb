@@ -1,3 +1,4 @@
+Rails.application.config.assets.precompile += %w( ckeditor/* )
 # Use this hook to configure ckeditor
 Ckeditor.setup do |config|
   # ==> ORM configuration
@@ -5,7 +6,6 @@ Ckeditor.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require "ckeditor/orm/active_record"
-  Rails.application.config.assets.precompile += %w( ckeditor/* )
   config.assets_languages = ['ru', 'en']
   config.assets_plugins = ['image', 'smiley']
 

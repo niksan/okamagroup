@@ -98,6 +98,12 @@
       </div>
     </div>
   </div>
+  <% unless @page.prices.empty?%>
+    <br />
+    <br />
+    <br />
+    <p><%= render partial: '/prices/list', locals: { prices: @page.prices } %></p>
+  <% end %>
 </div>
 <div class='fade' id='scroll-to-top'>
   <i class='fa-icon-chevron-up'></i>

@@ -9,4 +9,6 @@ class Page < ActiveRecord::Base
   scope :with_key, -> { where.not(key: nil) }
   scope :published, -> { where(public: true) }
 
+  has_many :prices
+
 end

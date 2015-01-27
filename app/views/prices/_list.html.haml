@@ -1,0 +1,8 @@
+.container
+  .row
+    .col-sm-12
+      .row
+        - prices.each do |price|
+          = link_to price.file.url, class: 'btn btn-bordered btn-default downloaded_price' do
+            = price.filename
+            %i.fa-icon-download-alt

@@ -9,3 +9,4 @@
         .row
           .col-sm-12
             != @page.body
+  = render partial: '/prices/list', locals: { prices: @page.prices }
