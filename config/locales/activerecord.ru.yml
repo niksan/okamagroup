@@ -41,6 +41,11 @@ ru:
         few: 'сотрудник'
         many: 'сотрудники'
         other: 'сотрудники'
+      staff_group: 
+        one: 'группа сотрудников'
+        few: 'группа сотрудников'
+        many: 'группы сотрудников'
+        other: 'группы сотрудников'
       user: 
         one: 'пользователь'
         few: 'пользователи'
@@ -71,6 +76,13 @@ ru:
         key: 'ключ(системный)'
         public: 'опубликовано'
       role:
+        name: 'название'
+      staff:
+        name: 'ФИО'
+        phone: 'Телефон'
+        email: 'E-mail'
+        staff_group: 'Группа сотрудников'
+      staff_group:
         name: 'название'
       user:
         email: 'e-mail'

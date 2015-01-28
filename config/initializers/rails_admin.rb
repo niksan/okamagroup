@@ -131,6 +131,7 @@ RailsAdmin.config do |config|
   end
 
   config.model 'Staff' do
+    configure :staff_group, :belongs_to_association
     configure :name, :string 
     configure :email, :string
     configure :phone, :string
@@ -138,12 +139,26 @@ RailsAdmin.config do |config|
       field :name
       field :email
       field :phone
+      field :staff_group
+    end
+    show do; end
+    edit do
+      field :staff_group
+      field :name
+      field :email
+      field :phone
+    end
+    export do; end
+  end
+
+  config.model 'StaffGroup' do
+    configure :name, :string 
+    list do
+      field :name
     end
     show do; end
     edit do
       field :name
-      field :email
-      field :phone
     end
     export do; end
   end

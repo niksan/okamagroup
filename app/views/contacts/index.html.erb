@@ -8,43 +8,45 @@
       </div>
     </div>
     <div class='row'>
-      <div class='col-sm-12'>
-        <div class='page-header page-header-with-icon'>
-          <i class='fa-icon-info-sign'></i>
-          <h2>
-            Контактная информация
-          </h2>
-        </div>
-        <% @staff.each do |employee| %>
-          <div class='row text-center' style='margin: 0px 0px 20px 0px;'>
-            <div class='col-sm-4'>
-              <div class='icon-wrap icon-circle contrast-bg icon-md'>
-                <i class='fa-icon-user text-white'></i>
-              </div>
-              <h3>ФИО</h3>
-              <ul class='list-unstyled'>
-                <li><%= employee.name %></li>
-              </ul>
-            </div>
-            <div class='col-sm-4'>
-              <div class='icon-wrap icon-circle contrast-bg icon-md'>
-                <i class='fa-icon-phone text-white'></i>
-              </div>
-              <h3>Телефон</h3>
-              <ul class='list-unstyled'>
-                <li><a href="tel:<%== employee.phone %>"><%== employee.phone %></a></li>
-              </ul>
-            </div>
-            <div class='col-sm-4'>
-              <div class='icon-wrap icon-circle contrast-bg icon-md'>
-                <i class='fa-icon-envelope-alt text-white'></i>
-              </div>
-              <h3>E-Mail</h3>
-              <ul class='list-unstyled'>
-                <li><a href="mailto:<%== employee.email %>"><%= employee.email %></a></li>
-              </ul>
-            </div>
+        <% @staff_groups.each do |group| %>
+        <div class='col-sm-12'>
+          <div class='page-header page-header-with-icon'>
+            <i class='fa-icon-info-sign'></i>
+            <h2>
+              <%= group.name %>
+            </h2>
           </div>
+          <% group.staffs.each do |employee| %>
+            <div class='row text-center' style='margin: 0px 0px 20px 0px;'>
+              <div class='col-sm-4'>
+                <div class='icon-wrap icon-circle contrast-bg icon-md'>
+                  <i class='fa-icon-user text-white'></i>
+                </div>
+                <h3>ФИО</h3>
+                <ul class='list-unstyled'>
+                  <li><%= employee.name %></li>
+                </ul>
+              </div>
+              <div class='col-sm-4'>
+                <div class='icon-wrap icon-circle contrast-bg icon-md'>
+                  <i class='fa-icon-phone text-white'></i>
+                </div>
+                <h3>Телефон</h3>
+                <ul class='list-unstyled'>
+                  <li><%= employee.phone %></li>
+                </ul>
+              </div>
+              <div class='col-sm-4'>
+                <div class='icon-wrap icon-circle contrast-bg icon-md'>
+                  <i class='fa-icon-envelope-alt text-white'></i>
+                </div>
+                <h3>E-Mail</h3>
+                <ul class='list-unstyled'>
+                  <li><%= employee.email %></li>
+                </ul>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -54,23 +56,24 @@
           <i class='fa-icon-envelope-alt'></i>
           <h2>Отправка сообщения</h2>
         </div>
+        <%= form_for :feedback, url: feedback_index_path, method: :post do |f| %>
         <form action='http://jednotka.bublinastudio.com/contact.html' class='form form-validation' method='get'>
           <div class='row'>
             <div class='col-sm-6'>
               <div class='form-group control-group'>
-                <input class='form-control' data-rule-required='true' id='contact_name' name='contact[name]' placeholder='Имя' type='text'>
+                <%= f.text_field :name, class: 'form-control', :'data-rule-required' => 'true', id: 'contact_name', placeholder: 'Имя' %>
               </div>
             </div>
             <div class='col-sm-6'>
               <div class='form-group control-group'>
-                <input class='form-control' data-rule-email='true' data-rule-required='true' id='contact_email' name='contact[email]' placeholder='E-Mail' type='text'>
+                <%= f.text_field :email, class: 'form-control', :'data-rule-required' => 'true', :'data-rule-email' => 'true', id: 'contact_email', placeholder: 'E-Mail' %>
               </div>
             </div>
           </div>
           <div class='row'>
             <div class='col-sm-12'>
               <div class='form-group control-group'>
-                <textarea class='form-control' data-rule-required='true' id='contact_message' name='contact[message]' placeholder='Ваше сообщение...'></textarea>
+                <%= f.text_area :body, class: 'form-control', :'data-rule-required' => 'true', id: 'contact_message', placeholder: 'Ваше сообщение...'%>
               </div>
             </div>
           </div>
@@ -81,7 +84,7 @@
               </button>
             </div>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
     <div class='row'>

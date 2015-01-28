@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127090241) do
+ActiveRecord::Schema.define(version: 20150128110927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,13 +112,22 @@ ActiveRecord::Schema.define(version: 20150127090241) do
 
   add_index "settings", ["key"], name: "index_settings_on_key", using: :btree
 
+  create_table "staff_groups", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "staffs", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "staff_group_id"
   end
+
+  add_index "staffs", ["staff_group_id"], name: "index_staffs_on_staff_group_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

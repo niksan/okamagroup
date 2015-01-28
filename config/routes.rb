@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :gosts, only: :index
   resources :specials, only: :index
   resources :pages, only: :show
+  resources :feedback, only: :create
   with_options only: :index do
     resources :prices
     resources :faq
