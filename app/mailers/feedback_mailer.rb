@@ -1,5 +1,5 @@
 class FeedbackMailer < ActionMailer::Base
-  default from: "okamagroup@mail.ru"
+  default from: "info@okamagroup.ru"
 
   def contact_form(name, email, body)
     @name = name
