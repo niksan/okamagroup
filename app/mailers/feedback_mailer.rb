@@ -5,6 +5,7 @@ class FeedbackMailer < ActionMailer::Base
     @name = name
     @email = email
     @body = body
+    mail(to: 'info@okamagroup.ru', subject: 'Сообщение с сайта OKAMA-GRPOUP.RU')
   end
 
 end
