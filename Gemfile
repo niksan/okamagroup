@@ -26,7 +26,7 @@ group :development do
   gem 'spring'
   gem 'letter_opener'
   gem "capistrano", '~> 3.0'
-  gem 'rvm1-capistrano3', require: false
+  gem 'capistrano-rvm'
   gem 'capistrano-rails'
 end
 
