@@ -1,76 +1,59 @@
-set :application,    'okamagroup'
-set :login,          'niksan'
-set :user,           'hosting_niksan'
+ssh_options[:forward_agent] = true
+set :application,     "okamagroup"
+set :deploy_server,   "hydrogen.locum.ru"
+set :bundle_without,  [:development, :test]
+set :user,            "hosting_niksan"
+set :login,           "niksan"
+set :use_sudo,        false
+set :deploy_to,       "/home/#{user}/projects/#{application}"
+set :unicorn_conf,    "/etc/unicorn/#{application}.#{login}.rb"
+set :unicorn_pid,     "/var/run/unicorn/#{user}/#{application}.#{login}.pid"
+set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
+set :linked_dirs,          %w{bin log vendor/bundle public/system public/uploads }
+set :rvm_ruby_string, "2.2.0"
+set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake" 
+set :bundle_cmd,      "rvm use #{rvm_ruby_string} do bundle"
+set :scm,             :git
+set :repository,      "https://github.com/niksan/okamagroup.git"
+role :web,            deploy_server
+role :app,            deploy_server
+role :db,             deploy_server, :primary => true
 
-set :deploy_to,      "/home/#{fetch(:user)}/projects/#{fetch(:application)}"
-set :unicorn_conf,   "/etc/unicorn/#{fetch(:application)}.#{fetch(:login)}.rb"
-set :unicorn_pid,    "/var/run/unicorn/#{fetch(:user)}/" \
-                     "#{fetch(:application)}.#{fetch(:login)}.pid"
-set :bundle_without, [:development, :test]
-set :use_sudo,       false
+require 'bundler/capistrano'
 
-set :repo_url,       "https://github.com/niksan/okamagroup.git"
+after "deploy:update_code", :link_files
 
-# Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+task :link_files, roles => :app do
+  %W(config/database.yml public/uploads public/system).each do |linked_file|
+    filepath = "#{ shared_path }/#{ linked_file }"
+    run "ln -nfs #{ filepath } #{ release_path }/#{ linked_file }"
+  end
+end
 
-set :scm, :git
-set :format, :pretty
-set :pty, true
+load 'deploy/assets'
 
-# Change the verbosity level
-set :log_level, :info
+before 'deploy:finalize_update', 'set_current_release'
+task :set_current_release, :roles => :app do
+    set :current_release, latest_release
+end
 
-# Default value for :linked_files is []
-# set :linked_files, %w{config/database.yml}
+  set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
-# Default value for linked_dirs is []
-set :linked_dirs, %w(bin log tmp/cache vendor/bundle public/system)
-
-# Default value for keep_releases is 5
-# set :keep_releases, 5
-
-# Configure RVM
-set :rvm_ruby_version, '2.2'
-
-# You unlikely have to change below this line
-# -----------------------------------------------------------------------------
-
-# Configure RVM
-set :rake,            "rvm use #{fetch(:rvm_ruby_version)} do bundle exec rake"
-set :bundle_cmd,      "rvm use #{fetch(:rvm_ruby_version)} do bundle"
-
-set :assets_roles, [:web, :app]
-
-set :unicorn_start_cmd,
-    "(cd #{fetch(:deploy_to)}/current; rvm use #{fetch(:rvm_ruby_version)} " \
-    "do bundle exec unicorn_rails -Dc #{fetch(:unicorn_conf)})"
 
 # - for unicorn - #
 namespace :deploy do
-  desc 'Start application'
-  task :start do
-    on roles(:app) do
-      execute unicorn_start_cmd
-    end
+  desc "Start application"
+  task :start, :roles => :app do
+    run unicorn_start_cmd
   end
 
-  desc 'Stop application'
-  task :stop do
-    on roles(:app) do
-      execute "[ -f #{fetch(:unicorn_pid)} ] && " \
-              "kill -QUIT `cat #{fetch(:unicorn_pid)}`"
-    end
+  desc "Stop application"
+  task :stop, :roles => :app do
+    run "[ -f #{unicorn_pid} ] && kill -QUIT `cat #{unicorn_pid}`"
   end
 
-  after :publishing, :restart
-
-  desc 'Restart Application'
-  task :restart do
-    on roles(:app) do
-      execute "[ -f #{fetch(:unicorn_pid)} ] && " \
-              "kill -USR2 `cat #{fetch(:unicorn_pid)}` || " \
-              "#{fetch(:unicorn_start_cmd)}"
-    end
+  desc "Restart Application"
+  task :restart, :roles => :app do
+    run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
 end

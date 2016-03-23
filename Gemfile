@@ -25,9 +25,7 @@ gem 'twitter-bootstrap-rails'
 group :development do
   gem 'spring'
   gem 'letter_opener'
-  gem "capistrano", '~> 3.0'
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails'
+  gem "capistrano", '~> 2.15.5'
 end
 
 gem 'therubyracer', platforms: :ruby
